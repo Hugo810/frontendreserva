@@ -1,0 +1,6 @@
+
+export enum StatusQuarto {
+    OCUPADO='OCUPADO',
+    MANUTENCAO='MANUTENCAO',
+    DISPONIVEL='DISPONIVEL'
+  }

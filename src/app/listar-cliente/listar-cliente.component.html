@@ -1,0 +1,36 @@
+<h2 class="text-center">Relatório de Clientes</h2>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tipo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.tipo }}</td>
+                <td>
+                    <button (click)="consultarCliente(cliente.id)" class="btn btn-success" style="margin-left: 10px;">Consultar</button>
+                    <button (click)="alterarCliente(cliente.id)" class="btn btn-info" style="margin-left: 10px;">Alterar</button>
+                    <button (click)="excluirCliente(cliente.id)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button (click)="inserirCliente()" class="btn btn-info" style="margin-left: 10px;">Inserir Novo Cliente</button>
+    <br><br>
+    <div class="form-group row">
+        <div class="col-4">
+            <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
+        </div>
+    </div>
+    <br><br>
+</div>

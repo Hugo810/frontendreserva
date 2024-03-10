@@ -1,0 +1,121 @@
+<h2 class="text-center">Relatório de Quartos</h2>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Numero</th>
+                <th>Preco</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quarto of quartos">
+                <td>{{ quarto.id }}</td>
+                <td>{{ quarto.tipo }}</td>
+                <td>{{ quarto.numero }}</td>
+                <td>{{ quarto.preco }}</td>
+                <td>{{quarto.status}}</td>
+                <td>
+                    <button (click)="consultarQuarto(quarto.id)" class="btn btn-success"
+                        style="margin-left: 10px;">Consultar</button>
+                    <button (click)="alterarQuarto(quarto.id)" class="btn btn-info"
+                        style="margin-left: 10px;">Alterar</button>
+                    <button (click)="excluirQuarto(quarto.id)" class="btn btn-danger"
+                        style="margin-left: 10px;">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button (click)="inserirQuarto()" class="btn btn-info" style="margin-left: 10px;">Inserir Novo Quarto</button>
+    <br><br>
+    <div class="col-0
+    ">
+        <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
+    </div>
+    <br><br>
+    
+    
+    <div class="form-group">
+        <label for="tipoQuarto">Filtrar por Tipo de Quarto:</label>
+        <select class="form-control" id="tipoQuarto" [(ngModel)]="tipoSelecionado">
+            <option value="">Selecione o tipo desejado !</option>
+            <option *ngFor="let tipo of tiposQuarto" [value]="tipo">{{ tipo }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="consultarTipo()" class="btn btn-success"
+            style="margin-left: 10px;">Consultar por Tipo</button>
+    </div>
+
+    <div *ngIf="quartosFiltrados && quartosFiltrados.length > 0" class="container">
+        <h3>Resultados da Busca</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo</th>
+                    <th>Numero</th>
+                    <th>Preco</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let quarto of quartosFiltrados">
+                    <td>{{ quarto.id }}</td>
+                    <td>{{ quarto.tipo }}</td>
+                    <td>{{ quarto.numero }}</td>
+                    <td>{{ quarto.preco }}</td>
+                    <td>{{quarto.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--aaqui modifiquei-->
+
+    <label for="statusQuarto">Filtrar por Status de Quarto:</label>
+        <select class="form-control" id="statusQuarto" [(ngModel)]="statusSelecionado">
+            <option value="">Selecione o status desejado !</option>
+            <option *ngFor="let status of statusQuarto" [value]="status">{{ status }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="consultarPorStatus()" class="btn btn-success"
+            style="margin-left: 410px;">Consultar por Status</button>
+    </div>
+
+
+    
+
+    <div *ngIf="statusFiltrados && statusFiltrados.length > 0" class="container">
+        <h3>Resultados da Busca</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo</th>
+                    <th>Numero</th>
+                    <th>Preco</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let quarto of quartosFiltrados">
+                    <td>{{ quarto.id }}</td>
+                    <td>{{ quarto.tipo }}</td>
+                    <td>{{ quarto.numero }}</td>
+                    <td>{{ quarto.preco }}</td>
+                    <td>{{quarto.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

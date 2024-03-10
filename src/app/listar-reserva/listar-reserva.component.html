@@ -1,0 +1,32 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Quarto</th>
+        <th>Data de Início</th>
+        <th>Data de Fim</th>
+        <th>Quantidade de Dias</th>
+        <th>Valor da Reserva</th>
+        <!-- Outras colunas conforme necessário -->
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservas">
+        <td>{{ reserva.id }}</td>
+        <td>{{ reserva.cliente }}</td>
+        <td>{{ reserva.quarto }}</td>
+        <td>{{ reserva.data_Inicio }}</td>
+        <!--<td>{{ reserva.data_Fim }}</td>-->
+        <td>{{ reserva.quantidadeDias }}</td>
+        <td>{{ reserva.valorReserva }}</td>
+        <!-- Outras colunas conforme necessário -->
+        <td>
+          <button (click)="listarReservas()">Detalhes</button>
+          <!-- Outros botões conforme necessário -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

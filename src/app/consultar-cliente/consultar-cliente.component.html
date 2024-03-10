@@ -1,0 +1,22 @@
+<div class="container">
+    <br>
+    <h3> Detalhes do Cliente</h3>
+
+    <br>
+    <div><label> <b> Id:</b></label> {{ cliente.id }}</div>
+    <div><label> <b> Nome:</b></label> {{ cliente.nome }}</div>
+
+    <br>
+    <br>
+
+    <div>
+        <!--<button *ngIf="cliente.id !== undefined && cliente.id !== null" (click)="(cliente.id)"
+            class="btn btn-primary">Consultar Cliente</button>-->
+        <!-- <button *ngIf="cliente && cliente.id !== undefined && cliente.id !== null"
+        (click)="consultarCliente(cliente.id)" class="btn btn-success">Consultar Cliente</button>-->
+        <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
+
+
+    </div>
+
+</div>
