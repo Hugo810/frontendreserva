@@ -25,16 +25,10 @@ export class ListarClienteComponent implements OnInit {
   }
 
   private listarCliente() {
-    this.clienteService.listarCliente().subscribe(
-      data => {
-        this.clientes = data;
-      },
-      error => {
-        console.error('Ocorreu um erro ao listar os clientes:', error);
-      }
-    );
+    this.clienteService.listarCliente().subscribe(data => {
+      this.clientes = data;
+    });
   }
-  
 
   excluirCliente(id: number) {
     if (confirm("Deseja excluir o cliente?")) {
@@ -97,5 +91,3 @@ consultarTipo() {
 
 
 }
-
-

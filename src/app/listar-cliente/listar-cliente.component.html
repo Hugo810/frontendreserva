@@ -17,9 +17,12 @@
                 <td>{{ cliente.email }}</td>
                 <td>{{ cliente.tipo }}</td>
                 <td>
-                    <button (click)="consultarCliente(cliente.id)" class="btn btn-success" style="margin-left: 10px;">Consultar</button>
-                    <button (click)="alterarCliente(cliente.id)" class="btn btn-info" style="margin-left: 10px;">Alterar</button>
-                    <button (click)="excluirCliente(cliente.id)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                    <button (click)="consultarCliente(cliente.id)" class="btn btn-success"
+                        style="margin-left: 10px;">Consultar</button>
+                    <button (click)="alterarCliente(cliente.id)" class="btn btn-info"
+                        style="margin-left: 10px;">Alterar</button>
+                    <button (click)="excluirCliente(cliente.id)" class="btn btn-danger"
+                        style="margin-left: 10px;">Excluir</button>
                 </td>
             </tr>
         </tbody>
@@ -33,4 +36,40 @@
         </div>
     </div>
     <br><br>
+
+    <div class="form-group">
+        <label for="tipoCliente">Filtrar por Tipo de Cliente:</label>
+        <select class="form-control" id="tipoCliente" [(ngModel)]="tipoSelecionado">
+            <option value="">Selecione o tipo desejado !</option>
+            <option *ngFor="let tipo of tiposCliente" [value]="tipo">{{ tipo }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="consultarTipo()" class="btn btn-success"
+            style="margin-left: 10px;">Consultar por Tipo</button>
+    </div>
+
+    <div *ngIf="clientesFiltrados && clientesFiltrados.length > 0" class="container">
+        <h3>Resultados da Busca</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientesFiltrados">
+                    <td>{{ cliente.id }}</td>
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.email }}</td>
+                    <td>{{ cliente.tipo }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
 </div>
