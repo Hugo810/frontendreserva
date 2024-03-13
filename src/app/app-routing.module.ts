@@ -14,7 +14,9 @@ import { AlterarQuartoComponent } from './alterar-quarto/alterar-quarto.componen
 import { InserirQuartoComponent } from './inserir-quarto/inserir-quarto.component';
 import { InserirReservaComponent } from './inserir-reserva/inserir-reserva.component';
 import { ListarReservaComponent } from './listar-reserva/listar-reserva.component';
-//import { ItemReservaComponent } from './item-reserva/item-reserva.component';
+import { ConsultarReservaComponent } from './consultar-reserva/consultar-reserva.component';
+import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.component';
+
 
 // Define as rotas da aplicação.
 const routes: Routes = [
@@ -32,7 +34,8 @@ const routes: Routes = [
   { path: 'alterar-quarto/:id', component: AlterarQuartoComponent }, // Corrigido: AlterarQuartoComponent
   { path: 'inserir-reserva', component: InserirReservaComponent },
   { path: 'listar-reserva', component: ListarReservaComponent },
-  //{ path: 'itemreserva', component: ItemReservaComponent }
+  {path:  'consultar-reserva/id',component:ConsultarReservaComponent},
+  {path:  'alterar-reserva/id',component:AlterarReservaComponent},
 
 ];
 

@@ -16,13 +16,23 @@ export class InserirReservaComponent {
   clientes: Cliente[] = [];
   quartos: Quarto[] = [];
   novaReserva: Reserva = {} as Reserva; // Inicializando como um objeto vazio
+  reservas: Reserva[] = [];
+  showSuccessMessage: boolean = false;
 
-  constructor(private clienteService: ClienteService, private quartoService: QuartoService, private reservaService: ReservaService, private router: Router) { }
+  constructor(
+    private clienteService: ClienteService,
+    private quartoService: QuartoService,
+    private reservaService: ReservaService,
+    private router: Router
+  ) {
+    this.reservas = []; // Inicialização da propriedade reservas
+  }
 
   ngOnInit(): void {
     this.buscarClientes();
     this.buscarQuartos();
     this.inicializarDataInicio(); // Inicializa a data de início ao carregar o componente
+    
   }
 
   buscarClientes() {
@@ -52,6 +62,7 @@ export class InserirReservaComponent {
       // Inserindo a reserva utilizando o serviço de reserva
       this.reservaService.incluirReserva(this.novaReserva).subscribe(reserva => {
         console.log('Reserva inserida com sucesso:', reserva);
+        this.showSuccessMessage = true;
         // Limpar os campos do formulário
         this.novaReserva = {} as Reserva; // ou você pode atribuir valores vazios aos campos individualmente
       });
@@ -59,5 +70,9 @@ export class InserirReservaComponent {
       console.error('As datas de início, cliente e quarto da reserva não são válidas.');
       console.log(this.novaReserva);
     }
+  }
+  
+  irParaListaReservas() {
+    this.router.navigate(['/listar-reserva']); // Navega para a lista de reservas quando o botão é clicado
   }
 }

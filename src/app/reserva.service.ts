@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Reserva } from './model/reserva';
 import { Cliente } from './model/cliente';
 import { Quarto } from './model/quarto';
-import { Reserva } from './model/reserva';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class ReservaService {
   constructor(private httpClient: HttpClient) { }
 
   incluirReserva(reserva: Reserva): Observable<Reserva> {
+    //const url = `${this.baseUrl}/reserva`;
     return this.httpClient.post<Reserva>(this.baseUrl, reserva);
   }
 
@@ -23,15 +24,28 @@ export class ReservaService {
     return this.httpClient.get<Cliente[]>(url);
   }
 
-  // Método para consultar todos os quartos
   consultarQuartos(): Observable<Quarto[]> {
     const url = `${this.baseUrl}/quarto`;
     return this.httpClient.get<Quarto[]>(url);
   }
 
-  // Método para listar todas as reservas
   listarReservas(): Observable<Reserva[]> {
-    const url = `${this.baseUrl}/reserva`; // Ajuste conforme sua rota para listar reservas
+    const url = `${this.baseUrl}/listareserva`;
     return this.httpClient.get<Reserva[]>(url);
+  }
+
+  excluirReserva(id: number): Observable<void> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.httpClient.delete<void>(url);
+  }
+
+  consultarReserva(id: number): Observable<Reserva> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.httpClient.get<Reserva>(url);
+  }
+
+  alterarReserva(id: number, reserva: Reserva): Observable<Reserva> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.httpClient.put<Reserva>(url, reserva);
   }
 }

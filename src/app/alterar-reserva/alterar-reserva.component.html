@@ -1,0 +1,24 @@
+<h2>Alterar Reserva</h2>
+
+<ng-container *ngIf="reserva">
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="dataInicio">Data de Início:</label>
+      <input type="date" id="dataInicio" name="dataInicio" [(ngModel)]="reserva.data_Inicio" required>
+    </div>
+    
+    <div>
+      <label for="cliente">Cliente:</label>
+      <input type="text" id="cliente" name="cliente" [(ngModel)]="reserva.cliente.nome" required>
+    </div>
+    <div>
+      <label for="quarto">Quarto:</label>
+      <input type="text" id="quarto" name="quarto" [(ngModel)]="reserva.quarto.numero" required>
+    </div>
+    <button type="submit">Salvar Alterações</button>
+  </form>
+
+  <button (click)="retornar()">Cancelar e Voltar para Lista de Reservas</button>
+</ng-container>
+
+<button *ngIf="!reserva" (click)="retornar()">Voltar para Lista de Reservas</button>

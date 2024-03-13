@@ -26,5 +26,21 @@
       <input type="number" class="form-control" id="valorReserva" [(ngModel)]="novaReserva.valorReserva" name="valorReserva" required>
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
+    <div *ngIf="showSuccessMessage" class="alert alert-success" role="alert">
+      <div class="d-flex align-items-center">
+        <div>
+          <i class="fas fa-check-circle me-2"></i>
+        </div>
+        <div>
+          <strong>Parabéns!</strong> Sua reserva foi inserida com sucesso.
+        </div>
+      </div>
+    </div>
+    
+    <!-- Lista de Reservas -->
+  
+
   </form>
+  <br>
+  <button (click)="irParaListaReservas()" class="btn btn-secondary">Ir para Lista de Reservas</button>
 </div>

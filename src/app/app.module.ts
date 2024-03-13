@@ -20,6 +20,8 @@ import { AlterarQuartoComponent } from './alterar-quarto/alterar-quarto.componen
 import { ListarQuartoComponent } from './listar-quarto/listar-quarto.component';
 import { InserirReservaComponent } from './inserir-reserva/inserir-reserva.component';
 import { ListarReservaComponent } from './listar-reserva/listar-reserva.component';
+import { ConsultarReservaComponent } from './consultar-reserva/consultar-reserva.component';
+import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.component';
 //import { ItemReservaComponent } from './item-reserva/item-reserva.component';
 
 
@@ -38,7 +40,9 @@ import { ListarReservaComponent } from './listar-reserva/listar-reserva.componen
     AlterarQuartoComponent,
     ListarQuartoComponent,
     InserirReservaComponent,
-    ListarReservaComponent
+    ListarReservaComponent,
+    ConsultarReservaComponent,
+    AlterarReservaComponent
     //ItemReservaComponent
   ],
   // Importação dos módulos necessários.

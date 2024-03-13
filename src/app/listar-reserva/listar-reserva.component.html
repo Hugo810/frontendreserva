@@ -1,32 +1,36 @@
-<table>
+<h2 class="text-center">Lista de reservas</h2>
+
+<div *ngIf="reservas.length > 0; else noReservas" class="container">
+  <table class="table table-striped">
     <thead>
       <tr>
-        <th>ID</th>
+        <th>Código</th>
+        <th>Data de Início</th>
         <th>Cliente</th>
         <th>Quarto</th>
-        <th>Data de Início</th>
-        <th>Data de Fim</th>
-        <th>Quantidade de Dias</th>
-        <th>Valor da Reserva</th>
-        <!-- Outras colunas conforme necessário -->
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let reserva of reservas">
         <td>{{ reserva.id }}</td>
-        <td>{{ reserva.cliente }}</td>
-        <td>{{ reserva.quarto }}</td>
         <td>{{ reserva.data_Inicio }}</td>
-        <!--<td>{{ reserva.data_Fim }}</td>-->
-        <td>{{ reserva.quantidadeDias }}</td>
-        <td>{{ reserva.valorReserva }}</td>
-        <!-- Outras colunas conforme necessário -->
+
+        
+
+        
+        <td>{{ reserva.cliente.nome }}</td>
+        <td>{{ reserva.quarto.numero }}</td>
         <td>
-          <button (click)="listarReservas()">Detalhes</button>
-          <!-- Outros botões conforme necessário -->
+          <button *ngIf="reserva.id !== undefined" class="btn btn-success" (click)="consultarReserva(reserva.id!)">Consultar</button>
+          <button *ngIf="reserva.id !== undefined" class="btn btn-info" (click)="alterarReserva(reserva.id!)">Alterar</button>
+          <button *ngIf="reserva.id !== undefined" class="btn btn-danger" (click)="excluirReserva(reserva.id!)">Excluir</button>
         </td>
       </tr>
     </tbody>
   </table>
-  
+</div>
+
+<ng-template #noReservas>
+  <p>Nenhuma reserva encontrada.</p>
+</ng-template>
