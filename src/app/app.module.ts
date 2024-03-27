@@ -22,6 +22,8 @@ import { InserirReservaComponent } from './inserir-reserva/inserir-reserva.compo
 import { ListarReservaComponent } from './listar-reserva/listar-reserva.component';
 import { ConsultarReservaComponent } from './consultar-reserva/consultar-reserva.component';
 import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.component';
+import { UsuarioService } from './usuario-service.service';
+import { LoginComponent } from './login/login.component';
 //import { ItemReservaComponent } from './item-reserva/item-reserva.component';
 
 
@@ -42,7 +44,9 @@ import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.compo
     InserirReservaComponent,
     ListarReservaComponent,
     ConsultarReservaComponent,
-    AlterarReservaComponent
+    AlterarReservaComponent,
+    LoginComponent
+    
 
   ],
   // Importação dos módulos necessários.
@@ -56,7 +60,7 @@ import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.compo
 
   ],
   // Provedores de serviços.
-  providers: [],
+  providers: [UsuarioService],
   // Componente inicial da aplicação.
   bootstrap: [AppComponent]
 })

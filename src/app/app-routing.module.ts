@@ -16,12 +16,14 @@ import { InserirReservaComponent } from './inserir-reserva/inserir-reserva.compo
 import { ListarReservaComponent } from './listar-reserva/listar-reserva.component';
 import { ConsultarReservaComponent } from './consultar-reserva/consultar-reserva.component';
 import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.component';
+import { LoginComponent } from './login/login.component';
+
 
 
 // Define as rotas da aplicação.
 const routes: Routes = [
   // Rota para a página inicial.
-  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   { path: 'inicio', component: InicioComponent },
   { path: 'listar-cliente', component: ListarClienteComponent },
@@ -34,8 +36,13 @@ const routes: Routes = [
   { path: 'alterar-quarto/:id', component: AlterarQuartoComponent }, // Corrigido: AlterarQuartoComponent
   { path: 'inserir-reserva', component: InserirReservaComponent },
   { path: 'listar-reserva', component: ListarReservaComponent },
-  {path:  'consultar-reserva/:id',component:ConsultarReservaComponent},
-  {path:  'alterar-reserva/:id',component:AlterarReservaComponent}
+  { path: 'consultar-reserva/:id', component: ConsultarReservaComponent },
+  { path: 'alterar-reserva/:id', component: AlterarReservaComponent },
+  { path: 'login', component: LoginComponent }
+  
+
+
+
 
 ];
 
