@@ -22,8 +22,8 @@
         <td>{{ reserva.cliente.nome }}</td>
         <td>{{ reserva.quarto.numero }}</td>
         <td>
-          <button *ngIf="reserva.id !== undefined" class="btn btn-success" (click)="consultarReserva(reserva.id!)">Consultar</button>
-          <button *ngIf="reserva.id !== undefined" class="btn btn-info" (click)="alterarReserva(reserva.id!)">Alterar</button>
+          <button *ngIf="reserva.id !== undefined" class="btn btn-success mr-2" (click)="consultarReserva(reserva.id!)">Consulta</button>
+          <button *ngIf="reserva.id !== undefined" class="btn btn-info mr-2" (click)="alterarReserva(reserva.id!)">Alterar</button>
           <button *ngIf="reserva.id !== undefined" class="btn btn-danger" (click)="excluirReserva(reserva.id!)">Excluir</button>
         </td>
       </tr>

@@ -43,7 +43,7 @@ import { AlterarReservaComponent } from './alterar-reserva/alterar-reserva.compo
     ListarReservaComponent,
     ConsultarReservaComponent,
     AlterarReservaComponent
-    //ItemReservaComponent
+
   ],
   // Importação dos módulos necessários.
   imports: [

@@ -1,11 +1,10 @@
-<h2>Consultar Reserva</h2>
+<h2 class="text-center">Consulta de Reserva</h2>
 
-<div *ngIf="reserva">
+<div *ngIf="reserva" class="container">
   <div>ID: {{ reserva.id }}</div>
   <div>Data de Início: {{ reserva.data_Inicio | date: 'dd/MM/yyyy' }}</div>
-  
   <div>Cliente: {{ reserva.cliente.nome }}</div>
   <div>Quarto: {{ reserva.quarto.numero }}</div>
+  
+  <button (click)="retornar()" class="btn btn-secondary text-right">Lista de Reservas</button>
 </div>
-
-<button (click)="retornar()">Voltar para Lista de Reservas</button>

@@ -34,8 +34,8 @@ const routes: Routes = [
   { path: 'alterar-quarto/:id', component: AlterarQuartoComponent }, // Corrigido: AlterarQuartoComponent
   { path: 'inserir-reserva', component: InserirReservaComponent },
   { path: 'listar-reserva', component: ListarReservaComponent },
-  {path:  'consultar-reserva/id',component:ConsultarReservaComponent},
-  {path:  'alterar-reserva/id',component:AlterarReservaComponent},
+  {path:  'consultar-reserva/:id',component:ConsultarReservaComponent},
+  {path:  'alterar-reserva/:id',component:AlterarReservaComponent}
 
 ];
 
